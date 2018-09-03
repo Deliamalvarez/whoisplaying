@@ -23,7 +23,9 @@ namespace WhoIsPlaying
 			var items = await usersTable.ExecuteQuerySegmentedAsync(query, null);
 			return req.CreateResponse(HttpStatusCode.OK, items.Select(user => new {
 				Name = user.Name,
-				Email = user.Email
+				Email = user.Email,
+                VoteQuantity = user?.VoteQuantity,
+                Votes = user?.Votes
 			}));
 		}
 	}

@@ -8,14 +8,16 @@ namespace WhoIsPlaying.Common
 	{
 		public DateTime EventDateAndTime { get; set; }
 		public string Location { get; set; }
-		public List<InviteeDetails> Invitees { get; set; }
+		public List<PlayerDetails> Invitees { get; set; }
 	}
 
-	public class InviteeDetails
+	public class PlayerDetails
 	{
 		public string Name { get; set; }
 		public string Email { get; set; }
-	}
+        public double Votes { get; set; }
+
+    }
 
 	public class EmailDetails
 	{
@@ -29,8 +31,8 @@ namespace WhoIsPlaying.Common
 
     public class Teams
     {
-        public List<InviteeDetails> team1 { get; set; }
-        public List<InviteeDetails> team2 { get; set; }
+        public List<PlayerDetails> team1 { get; set; }
+        public List<PlayerDetails> team2 { get; set; }
         
     }
 
@@ -39,7 +41,9 @@ namespace WhoIsPlaying.Common
 		public string ResponsesJson { get; set; }
 		public string Location { get; set; }
 		public DateTime EventDateAndTime { get; set; }
-        public Teams teams { get; set; }
+        public string teams { get; set; }
+
+        public string votes { get; set; }
     }
 
    
@@ -48,9 +52,13 @@ namespace WhoIsPlaying.Common
 	{
 		public string Name { get; set; }
 		public string Email { get; set; }
-	}
+        public double Votes { get; set; }
 
-	public class Response
+        public double VoteQuantity { get; set; }
+
+    }
+
+    public class Response
 	{
 		public string Name { get; set; }
 		public string Email { get; set; }

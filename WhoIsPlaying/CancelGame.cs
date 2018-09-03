@@ -18,7 +18,7 @@ namespace WhoIsPlaying
 	{
 
 		[FunctionName("cancelGame")]
-		public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "cancelGame/{id}")]HttpRequestMessage req, 
+		public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "cancelGame/{id}")]HttpRequestMessage req, 
 			TraceWriter log, 
 			[Queue("EmailQueue")] IAsyncCollector<EmailDetails> emailsQueue,
 			[Table("game")] CloudTable gameTable, string id)

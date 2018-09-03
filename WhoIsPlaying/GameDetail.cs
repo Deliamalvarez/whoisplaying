@@ -29,6 +29,8 @@ namespace WhoIsPlaying
             }
             var responses = JsonConvert.DeserializeObject<Response[]>(game.ResponsesJson);
 
+           
+
             // parse query parameter
             string responseCode = req.GetQueryNameValuePairs()
                 .FirstOrDefault(q => string.Compare(q.Key, "responseCode", true) == 0)
@@ -38,6 +40,7 @@ namespace WhoIsPlaying
             {
                 EventDateAndTime = game.EventDateAndTime,
                 Location = game.Location,
+                Teams = getTeams(game.teams),
                 Responses = responses.Select(r => new
                 {
                     Name = r.Name,
@@ -47,5 +50,9 @@ namespace WhoIsPlaying
             });
         }
 
+        private static Teams getTeams(string teams)
+        {
+            return !string.IsNullOrEmpty(teams)? JsonConvert.DeserializeObject<Teams>(teams) : null;
+        }
     }
 }
