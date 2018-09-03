@@ -1,20 +1,20 @@
 <h1 class="title lg">
         Jugadores
 </h1> 
-    <div class="scroll">
-        <div class="width" *ngFor="let event of eventDetails?.Responses"> 
-            <div class="card">
-                <span class="gap">                  
-                  {{event?.Name}}
-                </span>
-                <span class="gap playing">{{event.Playing | playing}}</span>
-            </div>            
-        </div>
-    </div>    
-    <div  *ngIf="enableCreateButton()">
-      <button class="button" (click)="createTeams()">Crear equipos</button>
-    </div>
-    <div *ngIf="enableConfirmCancelButtons()">
-      <button class="button" (click)="confirm()">Confirmar</button>
-      <button class="button" (click)="cancel()">Cancelar</button>
-    </div>
+<div class="width" *ngFor="let event of eventDetails?.Responses"> 
+    <div class="card">
+        <span class="gap">                  
+            {{event?.Name}}
+        </span>
+        <span class="gap playing">{{event.Playing | playing}}</span>
+    </div>            
+</div>
+</div>    
+<div  *ngIf="enableCreateButton()">
+    <button class="button" (click)="createTeams()">Crear equipos</button>
+</div>
+<div *ngIf="enableConfirmCancelButtons()">
+    <button class="button" (click)="confirm()">Confirmar</button>
+    <button class="button" (click)="cancel()">Cancelar</button>
+</div>   <div class="scroll">
+ 
