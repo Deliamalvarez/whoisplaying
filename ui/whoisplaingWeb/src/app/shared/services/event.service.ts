@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { Event } from '../models/event';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 import { EventDetails } from '../models/event-details';
 import { Responses, Playing } from '../models/responses';
 import { User } from '../models/user';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
