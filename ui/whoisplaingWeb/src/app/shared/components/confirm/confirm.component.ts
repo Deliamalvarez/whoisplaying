@@ -13,21 +13,35 @@ export class ConfirmComponent implements OnInit {
 
   eventDetail: EventDetails;
 
+  responseCode: string;
+  eventId: string;
+
   constructor(private eventService: EventService, private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit() {
-    let id = this.route.snapshot.paramMap.get('id');
-    /*const eventDetailSubscription = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) => {
-        console.log(params.get('id'));
-        return this.eventService.getEventDetails(params.get('id'));
-      })
-    );*/
+    this.eventId = this.route.snapshot.paramMap.get('eventId');
+    this.responseCode = this.route.snapshot.paramMap.get('responseCode');
 
-    this.eventService.getEventDetails(id).subscribe(response => {
+    this.eventService.getEventDetails(this.eventId).subscribe(response => {
       this.eventDetail = response as EventDetails;
     });
+  }
+
+  confirm() {
+    this.sendConfirmation({ 'isPlaying': 'yes' });
+  }
+
+  cancel() {
+    this.sendConfirmation({ 'isPlaying': 'no' });
+  }
+
+  sendConfirmation(body) {
+    this.eventService.confirmGameParticipant(this.eventId, this.responseCode, body).subscribe(
+      data => {
+        return this.router.navigate(['/']);
+      }
+    );
   }
 
 }

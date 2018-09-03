@@ -25,7 +25,7 @@ export class EventService {
         headers: new HttpHeaders().set('Content-Type', 'application/json'),
         })
         .do(response => {
-          console.log("response", response);
+          console.log('response', response);
           return response;
         })
 
@@ -35,6 +35,13 @@ export class EventService {
   getEventDetails(id: string): Observable<EventDetails> {
     const uri = `https://creategame.azurewebsites.net/api/gameDetail/${id}`;
     return this.httpClient.get(uri) as Observable<EventDetails>;
+  }
+
+  confirmGameParticipant(eventId: string, responseCode: string, body: any){
+    const uri = `https://creategame.azurewebsites.net/api/updateGameInvitation/${eventId}/response/${responseCode}`;
+    return this.httpClient.put(uri, body, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+      }) as Observable<EventDetails>;
   }
 
 }

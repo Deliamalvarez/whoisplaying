@@ -7,7 +7,7 @@ import { ConfirmComponent } from './shared/components/confirm/confirm.component'
 const routes: Routes = [
   {path: 'events', component: EventListComponent},
   {path: 'events/:id', component: EventDetailsComponent},
-  {path: 'confirm/:id', component: ConfirmComponent},
+  {path: 'confirm/:eventId/:responseCode', component: ConfirmComponent},
   {path: '', redirectTo: '/events', pathMatch: 'full'}
 ];
 
