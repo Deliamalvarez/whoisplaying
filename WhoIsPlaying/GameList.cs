@@ -8,10 +8,10 @@ using Microsoft.Azure.WebJobs.Host;
 
 namespace WhoIsPlaying
 {
-    public static class Function1
+    public static class GameList
     {
-        [FunctionName("Function1")]
-        public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)]HttpRequestMessage req, TraceWriter log)
+        [FunctionName("gameList")]
+        public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)]HttpRequestMessage req, TraceWriter log)
         {
             log.Info("C# HTTP trigger function processed a request.");
 
