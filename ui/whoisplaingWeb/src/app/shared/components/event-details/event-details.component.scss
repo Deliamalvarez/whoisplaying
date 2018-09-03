@@ -6,13 +6,15 @@
     width: 50%;
 }
 .title {
-    margin: 0 22rem;
-    margin-top: 2rem;
+    margin: 2rem 0;
 }
 .scroll {
     overflow: auto; 
-    padding: 0 20rem; 
+    padding: 1rem;
     padding-bottom: 1rem;     
+}
+.playing {
+    margin-left: auto;
 }
 
 .card {
@@ -36,3 +38,16 @@
         cursor: pointer;
     }
   }
+@media screen and (max-width:1150px) {
+    .title {
+        margin: 7rem 0; 
+        margin-bottom: 3rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .title {
+        margin-top: 10rem 0;
+        margin-bottom: 5rem; 
+    }
+}

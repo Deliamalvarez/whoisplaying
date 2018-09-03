@@ -5,7 +5,46 @@
 .width {
     width: 50%;
 }
+.scroll {
+    overflow: auto; 
+    padding: 1rem;
+    padding-bottom: 1rem;     
+}
 
 .user {
     margin: auto;
 }
+.menu {
+    display: flex;
+    align-items: center;
+    background-color: rgba($spanish-virdian, .6);
+    -webkit-box-shadow: -1px 8px 23px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 8px 23px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 8px 23px 0px rgba(0,0,0,0.75);
+    color: $orange;
+    border: 1px solid $line-color;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 3rem;
+}
+.buttons {
+    margin-bottom: 1rem;
+}
+.card {
+    padding: 1rem 0;
+}
+.button {
+    padding: 0.5rem;
+    border-radius: 2px;
+    transition: 0.2s;
+    width: 20%;
+    height: 50%;
+    color:$orange;
+    
+    &:hover {
+        transition: 0.2s;
+        cursor: pointer;
+        background-color: $british-racing-green;
+        transition: 0.2s;
+    }
+  }

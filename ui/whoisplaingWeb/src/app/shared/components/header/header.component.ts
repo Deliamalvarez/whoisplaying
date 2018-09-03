@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  newEvent(){
+  newEvent() {
     this.router.navigate(['/events/new']);
   }
 }

@@ -2,12 +2,12 @@
         Jugadores
 </h1> 
     <div class="scroll">
-        <div class="width" *ngFor="let event of eventDetails?.Responses"> 
+        <div  *ngFor="let event of eventDetails?.Responses"> 
             <div class="card">
                 <span class="gap">                  
                   {{event?.Name}}
                 </span>
-                <span class="gap playing">{{event.Playing | playing}}</span>
+                <span class="gap playing">{{event.laying | playing}}</span>
             </div>            
         </div>
     </div>    
