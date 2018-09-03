@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { EventListComponent } from './shared/components/event-list/event-list.component';
@@ -15,6 +14,7 @@ import { HamburgerComponent } from './shared/components/hamburger/hamburger.comp
 import { ConfirmComponent } from './shared/components/confirm/confirm.component';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,15 +24,17 @@ import { HttpClientModule } from '@angular/common/http';
     EventDetailsComponent,
     PlayingPipe,
     HamburgerComponent,
-    ConfirmComponent,
+    ConfirmComponent, EventNewComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
   providers: [
-    EventService
+    EventService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
