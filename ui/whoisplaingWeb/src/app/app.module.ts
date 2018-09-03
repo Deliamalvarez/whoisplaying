@@ -16,11 +16,11 @@ import { HamburgerComponent } from './shared/components/hamburger/hamburger.comp
     HeaderComponent,
     EventListComponent,
     EventComponent,
-    HamburgerComponent,    
+    HamburgerComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [
     EventService
