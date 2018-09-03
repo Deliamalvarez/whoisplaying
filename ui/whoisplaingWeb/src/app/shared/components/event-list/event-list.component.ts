@@ -20,7 +20,7 @@ export class EventListComponent implements OnInit {
     })
   }
 
-  viewEventDetails(event) {    
-    this.router.navigate(['/events', event.id]);
+  viewEventDetails(event) {   
+    this.router.navigate(['/events', event.Id]);
   }
 }

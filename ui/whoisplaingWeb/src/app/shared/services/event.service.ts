@@ -21,19 +21,20 @@ export class EventService {
 
     let url:string =  'https://creategame.azurewebsites.net/api/gameList';
 
-    return this.httpClient.get<any>(url,{
-        headers: new HttpHeaders().set('Content-Type', 'application/json'),
-        })
+    return this.httpClient.get<any>(url,{ headers: new HttpHeaders().set('Content-Type', 'application/json') })
         .do(response => {          
           return response;
         })
-
-
   }
 
   getEventDetails(id: string): Observable<EventDetails> {
+    console.log("Get Event details")
     const uri = `https://creategame.azurewebsites.net/api/gameDetail/${id}`;
-    return this.httpClient.get(uri) as Observable<EventDetails>;
+        return this.httpClient.get<any>(uri,{ headers: new HttpHeaders().set('Content-Type', 'application/json') })
+    .do(response => {     
+      console.log("Response", response);     
+      return response;
+    })
   }
 
   createGame(game:NewGame): Observable<any> {

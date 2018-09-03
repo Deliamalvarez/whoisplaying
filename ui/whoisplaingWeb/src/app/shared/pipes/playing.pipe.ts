@@ -6,10 +6,10 @@ import { Playing } from '../models/responses';
 })
 export class PlayingPipe implements PipeTransform {
 
-  transform(value: Playing, args?: any): string {
+  transform(value: string, args?: any): string {
     switch(value) {
-      case Playing.yes: return 'Juega';
-      case Playing.no: return 'No juega';
+      case 'yes': return 'Juega';
+      case 'no': return 'No juega';
       default: return 'Pendiente'
     }   
   }
