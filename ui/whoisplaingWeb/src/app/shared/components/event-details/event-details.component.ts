@@ -13,7 +13,7 @@ import { Playing } from '../../models/responses';
 })
 export class EventDetailsComponent implements OnInit {
 
-  eventDetails: EventDetails;
+  eventDetails: any;
 
   constructor(private route: ActivatedRoute,
               private router: Router, private eventService: EventService) { }
@@ -26,32 +26,28 @@ export class EventDetailsComponent implements OnInit {
     )
 
     eventDetailSubscription.subscribe( response => {
-      this.eventDetails = response as EventDetails;
+      this.eventDetails = response;
     })
   }
 
   createTeams() {
     //TODO, CALL SERVICE
   }
+ 
 
-  enableCreateButton() {
-    return this.hasAccepted10() && !this.teamsCreated();
-  }
-
-  hasAccepted10(): boolean {
-    if(this.eventDetails && this.eventDetails.responses) {
-      return this.eventDetails.responses.filter(x => x.playing == Playing.yes).length >= 10;
-    }   
-    return false;
-  }
-
-  teamsCreated(): boolean {
-    return this.eventDetails.team1 && this.eventDetails.team1.length > 0 &&
-    this.eventDetails.team2 && this.eventDetails.team2.length > 0;
+  teamsCreated(): boolean {    
+    if(this.eventDetails && this.eventDetails.Teams) {
+      return this.eventDetails.Teams.team1 && this.eventDetails.Teams.team1.length > 0 &&
+      this.eventDetails.Teams.team2 && this.eventDetails.Teams.team2.length > 0;
+    } else {
+      return false;
+    }    
   }
 
   enableConfirmCancelButtons(): boolean {
-    return this.hasAccepted10() && this.teamsCreated();
+    return this.teamsCreated();
   }
+
+  cancel() { }
 
 }

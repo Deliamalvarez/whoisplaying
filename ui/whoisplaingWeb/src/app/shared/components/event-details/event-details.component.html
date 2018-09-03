@@ -11,10 +11,9 @@
             </div>            
         </div>
     </div>    
-    <div  *ngIf="enableCreateButton()">
+    <div *ngIf="!this.teamsCreated()">
       <button class="button" (click)="createTeams()">Crear equipos</button>
     </div>
-    <div *ngIf="enableConfirmCancelButtons()">
-      <button class="button" (click)="confirm()">Confirmar</button>
+    <div *ngIf="enableConfirmCancelButtons()">     
       <button class="button" (click)="cancel()">Cancelar</button>
     </div>
