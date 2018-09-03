@@ -1,0 +1,11 @@
+@import '../../scss/cards';
+@import '../../scss/main.scss';
+@import '../../scss/sizes.scss';
+
+p {
+ size: 30px;
+ color: $spanish-virdian;
+ text-align: center;
+ padding: 10px;
+ font-weight: bold;
+}
