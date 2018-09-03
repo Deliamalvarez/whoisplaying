@@ -13,6 +13,8 @@ import { PlayingPipe } from './shared/pipes/playing.pipe';
 import { HamburgerComponent } from './shared/components/hamburger/hamburger.component';
 import { ConfirmComponent } from './shared/components/confirm/confirm.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EventNewComponent } from './shared/components/event-new/event-new.component';
+import { UserService } from './shared/services/user.service';
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     EventDetailsComponent,
     PlayingPipe,
     HamburgerComponent,
-    ConfirmComponent, EventNewComponent
+    ConfirmComponent, 
+    EventNewComponent
   ],
   imports: [
     FormsModule,
