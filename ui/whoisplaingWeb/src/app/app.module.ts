@@ -9,13 +9,17 @@ import { EventListComponent } from './shared/components/event-list/event-list.co
 import { EventComponent } from './shared/components/event/event.component';
 import { EventService } from './shared/services/event.service';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { EventDetailsComponent } from './shared/components/event-details/event-details.component';
+import { PlayingPipe } from './shared/pipes/playing.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     EventListComponent,
-    EventComponent,    
+    EventComponent,
+    EventDetailsComponent,
+    PlayingPipe,    
   ],
   imports: [
     BrowserModule,
