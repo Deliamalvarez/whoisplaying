@@ -16,7 +16,7 @@ namespace WhoIsPlaying
     public static class VoteForPlayer
     {
         [FunctionName("voteForPlayer")]
-        public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Function, "put", Route = "voteForPlayer/{id}")]HttpRequestMessage req, TraceWriter log, string id, [Table("game")] CloudTable gameTable, [Table("users")] CloudTable usersTable)
+        public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "voteForPlayer/{id}")]HttpRequestMessage req, TraceWriter log, string id, [Table("game")] CloudTable gameTable, [Table("users")] CloudTable usersTable)
         {
             var votes = await req.Content.ReadAsAsync<List<PlayerDetails>>();
 
