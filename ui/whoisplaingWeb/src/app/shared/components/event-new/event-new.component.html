@@ -1,0 +1,35 @@
+<div class="scroll">
+  <div> 
+      <div class="card">
+      <div >
+          <label class="gap" for="nombre">Nombre</label>
+          <input type="text" [(ngModel)]="nombre" id="nombre" class="gap" />
+        </div>   
+        <div >
+          <label class="gap" for="email">Email</label>
+          <input type="text" [(ngModel)]="email" id="email" class="gap" />
+        </div>   
+        <div >
+          <label class="gap" for="location">Location</label>
+          <input type="text" [(ngModel)]="location" id="location" class="gap" />
+        </div>  
+        <div >
+            <label class="gap" for="fecha">Fecha</label>
+            <input type="date" [(ngModel)]="fecha" id="fecha" class="gap" />
+          </div>          
+      </div>  
+      
+      <div class="width user" *ngFor="let user of users"> 
+          <div class="card ">
+              <span class="gap"><label><input type="checkbox" [(ngModel)]="user.Required"/>{{user.Name}}</label></span>
+              <span class="gap">{{user.Email}}</span>
+          </div>            
+      </div>
+      
+      <div class="width user"> 
+        <div class="card ">
+          <button (click)="addEvent()">Guardar</button>
+        </div>
+      </div>
+  </div>
+</div> 

@@ -39,7 +39,10 @@ export class EventDetailsComponent implements OnInit {
   }
 
   hasAccepted10(): boolean {
-    return this.eventDetails.responses.filter(x => x.playing == Playing.yes).length >= 10;
+    if(this.eventDetails && this.eventDetails.responses) {
+      return this.eventDetails.responses.filter(x => x.playing == Playing.yes).length >= 10;
+    }   
+    return false;
   }
 
   teamsCreated(): boolean {

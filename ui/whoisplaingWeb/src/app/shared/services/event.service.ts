@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Event } from '../models/event';
+import { Event, NewGame } from '../models/event';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
@@ -21,20 +21,20 @@ export class EventService {
 
     let url:string =  'https://creategame.azurewebsites.net/api/gameList';
 
-    return this.httpClient.get<any>(url,{
-        headers: new HttpHeaders().set('Content-Type', 'application/json'),
-        })
+    return this.httpClient.get<any>(url,{ headers: new HttpHeaders().set('Content-Type', 'application/json') })
         .do(response => {
-          console.log('response', response);
           return response;
         })
-
-
   }
 
   getEventDetails(id: string): Observable<EventDetails> {
+    console.log('Get Event details')
     const uri = `https://creategame.azurewebsites.net/api/gameDetail/${id}`;
-    return this.httpClient.get(uri) as Observable<EventDetails>;
+        return this.httpClient.get<any>(uri,{ headers: new HttpHeaders().set('Content-Type', 'application/json') })
+    .do(response => {
+      console.log('Response', response);
+      return response;
+    });
   }
 
   confirmGameParticipant(eventId: string, responseCode: string, body: any){
@@ -44,4 +44,18 @@ export class EventService {
       }) as Observable<EventDetails>;
   }
 
+  createGame(game:NewGame): Observable<any> {
+    const body: string = JSON.stringify(game);
+    const uri = 'https://creategame.azurewebsites.net/api/createGame';
+    return this.httpClient.post<any>(uri, body, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+      })
+      .do(response => console.log(JSON.stringify(response)))
+      .catch(this.handleError);
+  }
+
+  private handleError(err: HttpErrorResponse) {
+    console.error(err.message);
+    return Observable.throw(err);
+}
 }
