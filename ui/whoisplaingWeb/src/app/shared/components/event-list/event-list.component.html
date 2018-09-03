@@ -1,3 +1,5 @@
-<p>
-  event-list works!
-</p>
+<div class="scroll">
+    <div *ngFor="let event of eventList"> 
+        <app-event [event]="event"></app-event>
+      </div>
+</div>

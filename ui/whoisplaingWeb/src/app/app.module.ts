@@ -8,6 +8,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { EventListComponent } from './shared/components/event-list/event-list.component';
 import { EventComponent } from './shared/components/event/event.component';
 import { EventService } from './shared/services/event.service';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EventService } from './shared/services/event.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFontAwesomeModule
   ],
   providers: [
     EventService

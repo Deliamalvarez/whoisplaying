@@ -1,0 +1,16 @@
+@import 'colors.scss';
+
+.card {
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    color: $orange;
+    border: 1px solid $line-color;
+    height: 80px;
+    width: 95%;
+    margin: 20px;
+
+    &:hover {
+        cursor: pointer;        
+    }
+}
