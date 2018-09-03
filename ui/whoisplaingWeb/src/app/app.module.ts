@@ -5,18 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/components/header/header.component';
-
+import { EventListComponent } from './shared/components/event-list/event-list.component';
+import { EventComponent } from './shared/components/event/event.component';
+import { EventService } from './shared/services/event.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    EventListComponent,
+    EventComponent,    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    EventService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
