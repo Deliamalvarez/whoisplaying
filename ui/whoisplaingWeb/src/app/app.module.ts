@@ -8,13 +8,15 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { EventListComponent } from './shared/components/event-list/event-list.component';
 import { EventComponent } from './shared/components/event/event.component';
 import { EventService } from './shared/services/event.service';
+import { HamburgerComponent } from './shared/components/hamburger/hamburger.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     EventListComponent,
-    EventComponent,    
+    EventComponent,
+    HamburgerComponent,    
   ],
   imports: [
     BrowserModule,
