@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
@@ -21,16 +22,20 @@ namespace WhoIsPlaying
             var responses = new List<Response>();
             var eventId = Guid.NewGuid().ToString("n");
             var details = await req.Content.ReadAsAsync<EventDetails>();
+            var uri = "https://whoisplayingfuncs.azurewebsites.net/api/CreatingEvent?code=hPZSUjtzwXOZcad88K6t0m/1StfBPqYi5ZkVdYZea2IoFkqYUCWywA==&accessCode={accessCode}&event={eventId}";
             foreach (var invitee in details.Invitees)
             {
                 var accessCode = Guid.NewGuid().ToString("n");
+                var sb = new StringBuilder();
+                sb.Append($"Hola {invitee.Name},<br>");
+                sb.Append($"<p> Te invitamos a asistir al partido de f&uacute;tbol que tendr&aacute; lugar en <b>{details.Location}</b> a las <b>{details.EventDateAndTime}</b> </p>");
+                sb.Append($"<p> Confirm&aacute; <a href=\"{uri}\">aqu&iacute;</a></p>");
                 var emailDetail = new EmailDetails
                 {
                     Name = invitee.Name,
                     Email = invitee.Email,
-                    Location = details.Location,
-                    EventDateAndTime = details.EventDateAndTime,
-                    ResponseUrl = $"https://whoisplayingfuncs.azurewebsites.net/api/CreatingEvent?code=hPZSUjtzwXOZcad88K6t0m/1StfBPqYi5ZkVdYZea2IoFkqYUCWywA==&accessCode={accessCode}&event={eventId}"
+                    Message = sb.ToString(),
+                    Subject = "Te invitamos a jugar"
                 };
                 log.Info($"Inviting {invitee.Name} ({invitee.Email})");
                 await emailsQueue.AddAsync(emailDetail);

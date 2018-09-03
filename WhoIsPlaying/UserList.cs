@@ -16,7 +16,7 @@ namespace WhoIsPlaying
 		public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route =
 				null)]
 			HttpRequestMessage req, TraceWriter log
-			, [Table("users")] CloudTable usersTable, string id, string responseCode)
+			, [Table("users")] CloudTable usersTable)
 		{
 			log.Info($"Getting users");
 			var query = new TableQuery<UserEntity>();

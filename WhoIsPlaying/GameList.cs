@@ -21,6 +21,7 @@ namespace WhoIsPlaying
             var query = new TableQuery<EventTableEntity>();
             var items = await gamesTable.ExecuteQuerySegmentedAsync(query, null);
             return req.CreateResponse(HttpStatusCode.OK, items.Select(game => new {
+                Id = game.RowKey,
                 EventDateAndTime = game.EventDateAndTime,
                 Location = game.Location,
                 Invitees = JsonConvert.DeserializeObject<Response[]>(game.ResponsesJson)
