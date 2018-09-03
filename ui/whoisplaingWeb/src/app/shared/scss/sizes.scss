@@ -13,3 +13,9 @@ h3 {
 .lg {
     font-size: 6rem;
 }
+
+@media screen and (max-width:1150px) {
+    .lg {
+        font-size: 4rem;
+    }
+}
