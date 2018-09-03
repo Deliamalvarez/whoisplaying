@@ -23,7 +23,7 @@ export class EventService {
         headers: new HttpHeaders().set('Content-Type', 'application/json'),
         })
         .do(response => {
-          console.log("response");
+          console.log("response", response);
           return response;
         })      
         
