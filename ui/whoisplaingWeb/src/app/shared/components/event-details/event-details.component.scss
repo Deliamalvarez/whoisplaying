@@ -18,3 +18,19 @@
 .card {
     padding: 1rem 0;
 }
+
+.redTeam, .blueTeam {
+    width: 50%;
+}
+
+.redTeam .card{
+    background-color:rgba($color: red, $alpha: 0.6);
+}
+
+.blueTeam .card{
+    background-color:rgba($color: blue, $alpha: 0.6);
+}
+
+.teams {
+    display: flex;
+}

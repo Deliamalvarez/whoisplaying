@@ -14,6 +14,7 @@ import { Playing } from '../../models/responses';
 export class EventDetailsComponent implements OnInit {
 
   eventDetails: EventDetails;
+  hasTeamsCreated: boolean = false;
 
   constructor(private route: ActivatedRoute,
               private router: Router, private eventService: EventService) { }
@@ -27,6 +28,9 @@ export class EventDetailsComponent implements OnInit {
 
     eventDetailSubscription.subscribe( response => {
       this.eventDetails = response as EventDetails;
+      if(this.eventDetails && this.eventDetails['Teams']){
+        this.hasTeamsCreated = true;
+      }
     })
   }
 

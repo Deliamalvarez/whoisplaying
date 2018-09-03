@@ -1,7 +1,11 @@
-<h1 class="title lg">
+<h1 class="title lg" *ngIf="!hasTeamsCreated">
         Jugadores
 </h1> 
-    <div class="scroll">
+<h1 class="title lg" *ngIf="hasTeamsCreated">
+        Equipos
+</h1> 
+<div *ngIf="!hasTeamsCreated">
+    <div class="scroll" >
         <div class="width" *ngFor="let event of eventDetails?.Responses"> 
             <div class="card">
                 <span class="gap">                  
@@ -18,3 +22,21 @@
       <button class="button" (click)="confirm()">Confirmar</button>
       <button class="button" (click)="cancel()">Cancelar</button>
     </div>
+</div>
+
+<div class="teams" *ngIf="hasTeamsCreated">
+    <div class="redTeam">
+        <div class="width" *ngFor="let event of eventDetails?.Teams.team1"> 
+            <div class="card">
+                <span class="gap">{{event?.Name}}</span>
+            </div>            
+        </div>
+    </div>
+    <div class="blueTeam">
+        <div class="width" *ngFor="let event of eventDetails?.Teams.team2"> 
+            <div class="card">
+                <span class="gap">{{event?.Name}}</span>
+            </div>            
+        </div>
+    </div>
+</div>
