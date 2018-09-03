@@ -3,16 +3,10 @@
 @import '../../scss/sizes.scss';
 .scroll {
     overflow: auto; 
-    padding: 0 20rem;   
+    //padding: 0 20rem; 
+    padding-bottom: 1rem;
+      
 }
 .title {
-    margin: 0 22rem;
     margin-top: 2rem;
-}
-
-.event-element {
-    
-    &:hover {
-        background-color: $british-racing-green;
-    }
 }
