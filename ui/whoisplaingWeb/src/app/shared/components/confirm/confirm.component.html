@@ -1,6 +1,8 @@
 <p>Lugar: {{eventDetail?.Location}}</p>
 
 <p>Fecha: {{eventDetail?.EventDateAndTime}}</p>
+<div class="buttons">
+  <input type="button" value= "Confirmar" class="button" (click)="confirm()">
+  <input type="button" value="Cancelar" class="button" (click)="cancel()">
+</div>
 
-<button>Confirmar</button>
-<button>Cancelar</button>

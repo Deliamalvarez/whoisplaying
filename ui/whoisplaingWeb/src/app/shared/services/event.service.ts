@@ -22,24 +22,31 @@ export class EventService {
     let url:string =  'https://creategame.azurewebsites.net/api/gameList';
 
     return this.httpClient.get<any>(url,{ headers: new HttpHeaders().set('Content-Type', 'application/json') })
-        .do(response => {          
+        .do(response => {
           return response;
         })
   }
 
   getEventDetails(id: string): Observable<EventDetails> {
-    console.log("Get Event details")
+    console.log('Get Event details')
     const uri = `https://creategame.azurewebsites.net/api/gameDetail/${id}`;
         return this.httpClient.get<any>(uri,{ headers: new HttpHeaders().set('Content-Type', 'application/json') })
-    .do(response => {     
-      console.log("Response", response);     
+    .do(response => {
+      console.log('Response', response);
       return response;
-    })
+    });
+  }
+
+  confirmGameParticipant(eventId: string, responseCode: string, body: any){
+    const uri = `https://creategame.azurewebsites.net/api/updateGameInvitation/${eventId}/response/${responseCode}`;
+    return this.httpClient.put(uri, body, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+      }) as Observable<EventDetails>;
   }
 
   createGame(game:NewGame): Observable<any> {
     const body: string = JSON.stringify(game);
-    const uri = "https://creategame.azurewebsites.net/api/createGame";
+    const uri = 'https://creategame.azurewebsites.net/api/createGame';
     return this.httpClient.post<any>(uri, body, {
       headers: new HttpHeaders().set('Content-Type', 'application/json'),
       })

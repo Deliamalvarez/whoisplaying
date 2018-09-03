@@ -4,8 +4,28 @@
 
 p {
  size: 30px;
- color: $spanish-virdian;
+ color: $orange;
  text-align: center;
  padding: 10px;
  font-weight: bold;
+}
+
+.buttons {
+  text-align: center;
+  // width: 50%;
+  align-content: center;
+}
+
+.button {
+  padding: 0.5rem;
+  border-radius: 2px;
+  transition: 0.2s;
+  width: 20%;
+  height: 50%;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: $british-racing-green;
+  transition: 0.2s;
 }
