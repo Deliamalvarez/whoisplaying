@@ -1,0 +1,17 @@
+.grapper {
+    margin: 7rem;
+    margin-bottom: 0;
+    
+}
+
+@media screen and (max-width:1150px) {
+    .grapper {
+        margin: 5rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .grapper {
+        margin: 2rem;
+    }
+}

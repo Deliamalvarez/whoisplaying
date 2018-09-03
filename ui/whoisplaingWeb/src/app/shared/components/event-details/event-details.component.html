@@ -1,11 +1,13 @@
-<div class="container"> 
+<h1 class="title lg">
+        Jugadores
+</h1> 
     <div class="scroll">
         <div class="width" *ngFor="let event of eventDetails?.Responses"> 
             <div class="card">
                 <span class="gap">                  
                   {{event?.Name}}
                 </span>
-                <span class="gap">{{event?.Playing | playing}}</span>
+                <span class="gap playing">{{event.Playing | playing}}</span>
             </div>            
         </div>
     </div>    
@@ -16,4 +18,3 @@
       <button class="button" (click)="confirm()">Confirmar</button>
       <button class="button" (click)="cancel()">Cancelar</button>
     </div>
-</div>

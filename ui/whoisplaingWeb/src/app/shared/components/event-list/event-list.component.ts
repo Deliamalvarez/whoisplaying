@@ -17,10 +17,10 @@ export class EventListComponent implements OnInit {
   ngOnInit() {
     this.eventService.getActiveEvents().subscribe( result => {
       this.eventList = result;
-    })
+    });
   }
 
-  viewEventDetails(event) {   
+  viewEventDetails(event) {
     this.router.navigate(['/events', event.Id]);
   }
 }
