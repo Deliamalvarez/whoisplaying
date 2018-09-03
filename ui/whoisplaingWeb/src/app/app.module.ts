@@ -23,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     EventComponent,
     EventDetailsComponent,
     PlayingPipe,
-    HamburgerComponent, ConfirmComponent,
+    HamburgerComponent,
+    ConfirmComponent,
   ],
   imports: [
     BrowserModule,

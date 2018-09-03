@@ -7,22 +7,29 @@ import { HttpClient } from '@angular/common/http';
 import { EventDetails } from '../models/event-details';
 import { Responses, Playing } from '../models/responses';
 import { User } from '../models/user';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/do';
 
 @Injectable()
 export class EventService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getActiveEvents(): Observable<Event[]> {
-    let e1 = new Event();
-    e1.id = '1';
-    e1.date = new Date();
-    e1.name = 'Juego';
-    let e2 = new Event();
-    e2.id = '2';
-    e2.date = new Date();
-    e2.name = 'Fútbol';
-    return Observable.of([e1, e2]);
+  getActiveEvents(): Observable<any[]> {
+
+    let url:string =  'https://creategame.azurewebsites.net/api/gameList';
+
+    return this.httpClient.get<any>(url,{
+        headers: new HttpHeaders().set('Content-Type', 'application/json'),
+        })
+        .do(response => {
+          console.log("response", response);
+          return response;
+        })
+
+
   }
 
   getEventDetails(id: string): Observable<EventDetails> {
