@@ -54,8 +54,19 @@ export class EventService {
       .catch(this.handleError);
   }
 
+  createMatch(id: string): Observable<any> {
+    
+    const uri = `https://creategame.azurewebsites.net/api/createMatch/${id}`;
+
+    return this.httpClient.put<any>(uri, {}, {
+      headers: new HttpHeaders().set('Content-Type','application/json'),
+      })
+      .do(response => console.log(response))
+      .catch(this.handleError);
+  }
+
   private handleError(err: HttpErrorResponse) {
     console.error(err.message);
     return Observable.throw(err);
-}
+  }
 }

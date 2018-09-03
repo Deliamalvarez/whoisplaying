@@ -14,6 +14,7 @@ import { Playing } from '../../models/responses';
 export class EventDetailsComponent implements OnInit {
 
   eventDetails: any;
+  idEvent: string;
 
   constructor(private route: ActivatedRoute,
               private router: Router, private eventService: EventService) { }
@@ -21,6 +22,7 @@ export class EventDetailsComponent implements OnInit {
   ngOnInit() {
     let eventDetailSubscription = this.route.paramMap.pipe(
       switchMap((params: ParamMap) => {
+        this.idEvent = params.get('id');
         return this.eventService.getEventDetails(params.get('id'));
       })
     )
@@ -31,7 +33,9 @@ export class EventDetailsComponent implements OnInit {
   }
 
   createTeams() {
-    //TODO, CALL SERVICE
+    this.eventService.createMatch(this.idEvent).subscribe(x => {
+      this.router.navigate(['/events', this.idEvent]);
+    });
   }
  
 
@@ -41,12 +45,8 @@ export class EventDetailsComponent implements OnInit {
       this.eventDetails.Teams.team2 && this.eventDetails.Teams.team2.length > 0;
     } else {
       return false;
-    }    
-  }
-
-  enableConfirmCancelButtons(): boolean {
-    return this.teamsCreated();
-  }
+    }        
+  } 
 
   cancel() { }
 

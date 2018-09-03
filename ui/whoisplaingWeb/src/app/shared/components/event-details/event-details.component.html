@@ -11,9 +11,9 @@
             </div>            
         </div>
     </div>    
-    <div *ngIf="!this.teamsCreated()">
-      <button class="button" (click)="createTeams()">Crear equipos</button>
-    </div>
-    <div *ngIf="enableConfirmCancelButtons()">     
-      <button class="button" (click)="cancel()">Cancelar</button>
-    </div>
+    <div *ngIf="!this.teamsCreated()">     
+      <div class="buttons">
+          <input type="button" value= "Crear equipos" class="button" (click)="createTeams()">     
+          <button class="button" (click)="cancel()">Cancelar</button>     
+        </div>
+    </div>   

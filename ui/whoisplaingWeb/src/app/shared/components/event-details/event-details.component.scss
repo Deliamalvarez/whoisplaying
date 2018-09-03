@@ -18,3 +18,21 @@
 .card {
     padding: 1rem 0;
 }
+
+.buttons {
+    text-align: center;
+    // width: 50%;
+    align-content: center;
+  }
+  
+  .button {
+    padding: 0.5rem;
+    border-radius: 2px;
+    transition: 0.2s;
+    width: 20%;
+    height: 50%;
+
+    &:hover {
+        cursor: pointer;
+    }
+  }
