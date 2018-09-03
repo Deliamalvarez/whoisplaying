@@ -21,6 +21,6 @@ export class EventListComponent implements OnInit {
   }
 
   viewEventDetails(event) {
-    this.router.navigate(['/events', event.id]);
+    this.router.navigate(['/events', event.Id]);
   }
 }
