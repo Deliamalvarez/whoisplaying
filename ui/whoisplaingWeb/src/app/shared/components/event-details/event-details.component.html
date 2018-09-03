@@ -1,11 +1,11 @@
 <div class="container"> 
     <div class="scroll">
-        <div class="width" *ngFor="let event of eventDetails.responses"> 
+        <div class="width" *ngFor="let event of eventDetails?.Responses"> 
             <div class="card">
                 <span class="gap">                  
-                  {{event.name}}
+                  {{event?.Name}}
                 </span>
-                <span class="gap">{{event.playing | playing}}</span>
+                <span class="gap">{{event?.Playing | playing}}</span>
             </div>            
         </div>
     </div>    

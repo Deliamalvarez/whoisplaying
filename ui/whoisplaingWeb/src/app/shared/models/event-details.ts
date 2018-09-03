@@ -2,7 +2,7 @@ import { User } from "./user";
 import { Responses } from "./responses";
 
 export class EventDetails {
-    EventDateAndTime: Date;
+    eventDateAndTime: Date;
     location: string;
     team1: User[];
     team2: User[];
