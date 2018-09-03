@@ -1,11 +1,11 @@
 <section>
-    <h1 class="title">
+    <h1 class="title lg">
         Events
     </h1>
 </section>
 <div class="scroll">
     <div *ngFor="let event of eventList"> 
-        <app-event [event]="event"></app-event>
+        <app-event [event]="event" class="event-element"></app-event>
     </div>
 </div>
 
