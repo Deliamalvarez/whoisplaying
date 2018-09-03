@@ -11,6 +11,7 @@ import { EventService } from './shared/services/event.service';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { EventDetailsComponent } from './shared/components/event-details/event-details.component';
 import { PlayingPipe } from './shared/pipes/playing.pipe';
+import { HamburgerComponent } from './shared/components/hamburger/hamburger.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +21,11 @@ import { PlayingPipe } from './shared/pipes/playing.pipe';
     EventComponent,
     EventDetailsComponent,
     PlayingPipe,    
+    HamburgerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFontAwesomeModule
   ],
   providers: [
     EventService
