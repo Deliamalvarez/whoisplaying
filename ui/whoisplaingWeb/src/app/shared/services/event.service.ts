@@ -22,12 +22,9 @@ export class EventService {
     return this.httpClient.get<any>(url,{
         headers: new HttpHeaders().set('Content-Type', 'application/json'),
         })
-        .do(response => {
-          console.log("response", response);
+        .do(response => {          
           return response;
-        })      
-        
-  
+        })   
   }
 
   getEventDetails(id: string): Observable<EventDetails> {
