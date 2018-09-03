@@ -1,6 +1,13 @@
 @import '../../scss/cards.scss';
+@import '../../scss/colors.scss';
+@import '../../scss/main.scss';
+@import '../../scss/sizes.scss';
+
 
 span {
     padding-left: 20px;
     padding-right: 20px;
+}
+.date {
+    margin-left: auto;
 }
