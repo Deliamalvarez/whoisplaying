@@ -5,7 +5,7 @@
 </section>
 <div class="scroll">
     <div *ngFor="let event of eventList"> 
-        <app-event [event]="event" class="event-element"></app-event>
+        <app-event [event]="event" class="event-element" (click)="viewEventDetails(event)"></app-event>      
     </div>
 </div>
 
