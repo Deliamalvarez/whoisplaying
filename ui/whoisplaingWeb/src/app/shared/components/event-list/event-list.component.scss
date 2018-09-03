@@ -8,5 +8,18 @@
       
 }
 .title {
-    margin-top: 2rem;
+    margin: 2rem 0;
+}
+@media screen and (max-width:1150px) {
+    .title {
+        margin: 7rem 0; 
+        margin-bottom: 3rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .title {
+        margin-top: 10rem 0;
+        margin-bottom: 5rem; 
+    }
 }
