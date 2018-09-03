@@ -12,7 +12,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { EventDetailsComponent } from './shared/components/event-details/event-details.component';
 import { PlayingPipe } from './shared/pipes/playing.pipe';
 import { HamburgerComponent } from './shared/components/hamburger/hamburger.component';
-import { HttpClientModule } from '../../node_modules/@angular/common/http';
+import { ConfirmComponent } from './shared/components/confirm/confirm.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,16 +22,17 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
     EventListComponent,
     EventComponent,
     EventDetailsComponent,
-    PlayingPipe,    
-    HamburgerComponent,    
+    PlayingPipe,
+    HamburgerComponent,
+    ConfirmComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule    
+    HttpClientModule
   ],
   providers: [
-    EventService    
+    EventService
   ],
   bootstrap: [AppComponent]
 })

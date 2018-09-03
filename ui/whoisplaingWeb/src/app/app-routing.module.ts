@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { EventListComponent } from './shared/components/event-list/event-list.component';
 import { EventDetailsComponent } from './shared/components/event-details/event-details.component';
+import { ConfirmComponent } from './shared/components/confirm/confirm.component';
 
 const routes: Routes = [
   {path: 'events', component: EventListComponent},
   {path: 'events/:id', component: EventDetailsComponent},
+  {path: 'confirm/:id', component: ConfirmComponent},
   {path: '', redirectTo: '/events', pathMatch: 'full'}
 ];
 

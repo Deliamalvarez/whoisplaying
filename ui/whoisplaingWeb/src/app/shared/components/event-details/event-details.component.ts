@@ -21,18 +21,18 @@ export class EventDetailsComponent implements OnInit {
   ngOnInit() {
     let eventDetailSubscription = this.route.paramMap.pipe(
       switchMap((params: ParamMap) => {
-        return this.eventService.getEventDetails(params.get('id'))
+        return this.eventService.getEventDetails(params.get('id'));
       })
     )
 
     eventDetailSubscription.subscribe( response => {
-      this.eventDetails = response;
+      this.eventDetails = response as EventDetails;
     })
   }
 
   createTeams() {
     //TODO, CALL SERVICE
-  }  
+  }
 
   enableCreateButton() {
     return this.hasAccepted10() && !this.teamsCreated();
@@ -43,11 +43,11 @@ export class EventDetailsComponent implements OnInit {
   }
 
   teamsCreated(): boolean {
-    return this.eventDetails.team1 && this.eventDetails.team1.length > 0 && 
+    return this.eventDetails.team1 && this.eventDetails.team1.length > 0 &&
     this.eventDetails.team2 && this.eventDetails.team2.length > 0;
   }
 
-  enableConfirmCancelButtons(): boolean {    
+  enableConfirmCancelButtons(): boolean {
     return this.hasAccepted10() && this.teamsCreated();
   }
 
