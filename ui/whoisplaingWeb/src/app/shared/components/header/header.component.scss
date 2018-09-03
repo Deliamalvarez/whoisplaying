@@ -1,0 +1,33 @@
+@import '../../scss/colors.scss';
+@import '../../scss/main.scss';
+@import '../../scss/sizes.scss';
+
+.header {
+    position: fixed;
+    width: 100vw;
+    background-color: rgba($color: $yale-blue, $alpha: .7);
+    
+}
+.logo {
+    margin-right: auto;
+}
+
+.top-menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-item {
+    padding: 1.5rem;
+    color: $orange;
+    font-weight: 400;
+    cursor: pointer;
+
+    & :hover {
+        font-weight: 600;
+    }
+}
+.active {
+    font-weight: 600;
+    color: $acid-green;
+}
