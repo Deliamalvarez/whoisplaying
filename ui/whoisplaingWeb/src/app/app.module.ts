@@ -12,6 +12,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { EventDetailsComponent } from './shared/components/event-details/event-details.component';
 import { PlayingPipe } from './shared/pipes/playing.pipe';
 import { HamburgerComponent } from './shared/components/hamburger/hamburger.component';
+import { HttpClientModule } from '../../node_modules/@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,14 +22,15 @@ import { HamburgerComponent } from './shared/components/hamburger/hamburger.comp
     EventComponent,
     EventDetailsComponent,
     PlayingPipe,    
-    HamburgerComponent,
+    HamburgerComponent,    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule    
   ],
   providers: [
-    EventService
+    EventService    
   ],
   bootstrap: [AppComponent]
 })
