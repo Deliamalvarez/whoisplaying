@@ -32,6 +32,8 @@ export class EventDetailsComponent implements OnInit {
       this.eventDetails = response;
       if(this.eventDetails && this.eventDetails['Teams']){
         this.hasTeamsCreated = true;
+        //this.eventDetails.Teams.team1 = [{Name: "nombre 1", Email:"mail"},{Name: "nombre 3", Email:"mail 3"}];
+        //this.eventDetails.Teams.team2 = [{Name: "nombre 2", Email:"mail 2"},{Name: "nombre 3", Email:"mail 3"}];
       }
     })
   }
